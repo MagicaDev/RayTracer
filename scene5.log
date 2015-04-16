@@ -1,0 +1,38 @@
+camera       cam1
+pixel_dim      640   480 
+world_dim      8.0   6.0 
+view_point     4.0   3.0   4.0
+
+material     gray 
+ambient        0.0   0.0   0.0 
+diffuse        7.0   7.0   7.0 
+specular       0.0 
+shininess      0.0 
+transparency   0.0 
+
+material     red 
+ambient        0.0   0.0   0.0 
+diffuse        4.0   1.5   1.5 
+specular       0.0 
+shininess      0.0 
+transparency   0.0 
+
+plane        floor 
+material     gray 
+normal         0.0   1.0   0.0 
+point          0.0   0.0   0.0 
+
+
+sphere       shadowmaker 
+material     red 
+center         4.0   3.0  -4.0 
+radius         1.5
+
+light        ceiling 
+location       4.0   8.0  -4.0 
+emissivity     5.0   3.0   3.0 
+
+light        front 
+location       4.0   8.0   2.0 
+emissivity     3.0   3.0   3.0 
+
