@@ -1,0 +1,67 @@
+camera       cam1
+pixel_dim      800   600 
+world_dim      8.0   6.0 
+view_point     4.0   3.0   6.0
+
+
+
+material     white 
+ambient        0.0   0.0   0.0 
+diffuse        6.0   6.0   6.0 
+specular       0.0 
+
+shininess      0.0 
+
+transparency   0.0 
+
+
+material     gold 
+ambient        0.0   0.0   0.0 
+diffuse        5.0   5.0   0.0 
+specular       0.0 
+
+shininess      0.0 
+
+transparency   0.0 
+
+
+material     cyan 
+ambient        0.0   0.0   0.0 
+diffuse        0.0   6.0   6.0 
+specular       0.0 
+
+shininess      0.0 
+
+transparency   0.0 
+
+sphere       left 
+material     gold 
+center         0.0   3.0  -6.0 
+radius         3.0
+
+sphere       right 
+material     cyan 
+center         8.0   3.0  -6.0 
+radius         3.0
+
+plane        backwall 
+material     white 
+normal         0.0   0.0   1.0 
+point          0.0   0.0  -6.0 
+
+light        front 
+location       4.0   3.0   4.0 
+emissivity    20.0  20.0  20.0 
+projector     
+normal         0.0   0.0   1.0 
+point          0.0   0.0   0.0 
+dimensions     8.0   6.0
+xdir           1.0   0.0   0.0
+projected      1.0   0.0   0.0
+rotation matrix
+               1.000   0.000   0.000
+               0.000   1.000   0.000
+               0.000   0.000   1.000
+texname      hmb             
+mode             0
+

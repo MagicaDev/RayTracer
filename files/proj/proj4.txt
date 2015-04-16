@@ -1,0 +1,56 @@
+
+camera cam1
+{
+  pixeldim  800 600
+  worlddim  8 6
+  viewpoint 4 3 6
+}
+
+material white
+{
+   ambient 0 0 0
+   diffuse 9 9 9
+}
+
+material dummy
+{
+   diffuse 90 9 9
+}
+
+material gold
+{
+   diffuse 3 3 0
+}
+
+material cyan
+{
+   diffuse 0 6 6
+}
+
+
+sphere earth
+{
+   material white
+   center 4 3 -7
+   radius 4.4
+}
+
+texture sky
+{
+  filename    ../images/sky.ppm
+}
+projector front
+{
+   emissivity 14 14 14
+   location   4 3 8
+
+   point      2 1.5 3
+   normal     0 0 1
+
+   xdir       1 0 0
+   dimensions 4 3
+
+   texname sky
+   mode 0
+}
+

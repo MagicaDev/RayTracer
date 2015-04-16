@@ -168,7 +168,7 @@ class light_t
    	virtual void  getloc(vec_t *);
 //   	virtual int   vischeck(vec_t *);
    	virtual void  illuminate(model_t *, vec_t *, object_t *, drgb_t *);
-//   	virtual void  add_glint(object_t *, vec_t *, vec_t *, drgb_t *);
+   	virtual void  add_glint(object_t *, vec_t *, vec_t *, drgb_t *);
    	virtual void  printer(FILE *);
 
 	protected:

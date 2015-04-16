@@ -1,0 +1,22 @@
+camera cam
+{
+   viewpoint 4  3  4
+   pixeldim  481  361
+   worlddim 8  6
+}
+
+material green
+{
+   ambient  1  7  1
+}
+
+triangle tri
+{
+  material green
+  normal 0 0 1
+  point  3 2 -2
+  vertex1 1 -1 -4
+  vertex2 -3 2 -3
+  vertex3 -1 -2.5 -4 
+}
+

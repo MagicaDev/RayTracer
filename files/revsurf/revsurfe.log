@@ -1,0 +1,55 @@
+camera       cam1
+pixel_dim      640   480 
+world_dim      8.0   6.0 
+view_point     4.0   3.0  12.0
+
+
+
+material     gray 
+ambient        1.0   1.0   1.0 
+diffuse        4.0   4.0   4.0 
+specular       1.0 
+
+shininess      0.0 
+
+transparency   0.0 
+
+
+material     gold 
+ambient        1.0   1.0   0.0 
+diffuse        4.0   4.0   0.0 
+specular       0.0 
+
+shininess      0.0 
+
+transparency   0.0 
+
+revsurf      willwork 
+material     gray 
+surfer           2 
+direction      0.0   1.0   0.0 
+base           6.0   0.0  -4.0 
+
+revsurf      vase 
+material     gold 
+surfer           3 
+direction      0.0   1.0   0.0 
+base           2.0   0.0  -4.0 
+
+plane        floor 
+material     gray 
+normal         0.0   1.0   0.0 
+point          0.0   0.0   0.0 
+
+light        mid_left 
+location       2.0   4.0   0.0 
+emissivity     6.0   1.0   2.0 
+
+light        mid_right 
+location       6.0   4.0   0.0 
+emissivity     2.0   1.0   6.0 
+
+light        mid_center 
+location       6.0   4.0   0.0 
+emissivity     1.0   6.0   2.0 
+

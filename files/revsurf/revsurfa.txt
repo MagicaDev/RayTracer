@@ -1,0 +1,49 @@
+
+camera cam1
+{
+  pixeldim  640 480
+  worlddim  8 6
+  viewpoint 4 3 7
+}
+
+material gray
+{
+   ambient 1  1 1
+   diffuse 4 4 4
+}
+
+material gold
+{
+   ambient 1 1 0
+   diffuse 3 3 0
+}
+
+light mid_left
+{
+   location 2 4 0
+   emissivity 2 2 2
+}
+
+light mid_right
+{
+   location 6 4 0
+   emissivity 2 2 2
+}
+
+light mid_center
+{
+   location 6 4 0
+   emissivity 3 3 3
+}
+
+
+revsurf cone
+{
+   material gold
+   surfer 1
+   base 4 0 -4
+   direction 0 1 0
+   height 6
+}
+
+

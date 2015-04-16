@@ -1,0 +1,67 @@
+camera       cam1
+pixel_dim      800   600 
+world_dim      8.0   6.0 
+view_point     4.0   3.0   6.0
+
+
+
+material     white 
+ambient        0.0   0.0   0.0 
+diffuse        9.0   9.0   9.0 
+specular       0.0 
+
+shininess      0.0 
+
+transparency   0.0 
+
+
+material     dummy 
+ambient        0.0   0.0   0.0 
+diffuse       90.0   9.0   9.0 
+specular       0.0 
+
+shininess      0.0 
+
+transparency   0.0 
+
+
+material     gold 
+ambient        0.0   0.0   0.0 
+diffuse        3.0   3.0   0.0 
+specular       0.0 
+
+shininess      0.0 
+
+transparency   0.0 
+
+
+material     cyan 
+ambient        0.0   0.0   0.0 
+diffuse        0.0   6.0   6.0 
+specular       0.0 
+
+shininess      0.0 
+
+transparency   0.0 
+
+sphere       earth 
+material     white 
+center         4.0   3.0  -7.0 
+radius         4.4
+
+light        front 
+location       4.0   3.0   8.0 
+emissivity    14.0  14.0  14.0 
+projector     
+normal         0.0   0.0   1.0 
+point          2.0   1.5   3.0 
+dimensions     4.0   3.0
+xdir           1.0   0.0   0.0
+projected      1.0   0.0   0.0
+rotation matrix
+               1.000   0.000   0.000
+               0.000   1.000   0.000
+               0.000   0.000   1.000
+texname      sky             
+mode             0
+

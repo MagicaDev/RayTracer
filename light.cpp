@@ -75,6 +75,7 @@ void light_t::illuminate(model_t *model, vec_t *base, object_t *hitobj,
    pix_scale((cos/dist),&diffuse, &diffuse);
    pix_sum(pixel, &diffuse, pixel);
    
+   add_glint(hitobj, base, &dir, pixel);
    //at this point, pixels are right value
 }
 
@@ -85,6 +86,39 @@ void light_t::printer(FILE *out)
       location.y, location.z);
    fprintf(out, "%-12s %5.1f %5.1f %5.1f\n", "emissivity", emissivity.r, 
       emissivity.g, emissivity.b);
+}
+
+void light_t::add_glint(object_t *hitobj, vec_t *base, 
+      vec_t *dir, drgb_t *pixel)
+{
+   double shine;
+   double dotp;
+   double specular;
+   vec_t tobase;
+   vec_t udir;
+   vec_t sum;
+   vec_t lasthit;
+   vec_t lastnorm;
+   drgb_t emiss;
+
+   hitobj->getshine(&shine);
+   if(shine == 0.0)
+   {
+      return;   
+   }
+   hitobj->getlast_normal(&lastnorm);
+   vec_unit(&lastnorm, &lastnorm);
+   hitobj->getlast_hitpt(&lasthit);
+   vec_unit(dir, &udir);
+   vec_diff(base, &lasthit, &tobase);
+   vec_unit(&tobase, &tobase);
+   vec_sum(&tobase, &udir, &sum);
+   vec_unit(&sum, &sum);
+   dotp = vec_dot(&sum, &lastnorm);
+   dotp = pow(dotp, shine);
+   hitobj->getspecular(&specular);
+   pix_scale((dotp*specular),&emissivity, &emiss);
+   pix_sum(pixel, &emiss, pixel);
 }
 
 void light_list_print(model_t *model, FILE *out)

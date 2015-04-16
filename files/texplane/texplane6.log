@@ -1,0 +1,2 @@
+bad attr 0.3 
+ray: parser.c:45: int parser_load_attr(FILE*, pparm_t*, int, char*): Assertion `ndx >= 0' failed.

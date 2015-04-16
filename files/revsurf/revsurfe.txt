@@ -1,0 +1,64 @@
+
+camera cam1
+{
+  pixeldim  640 480
+  worlddim  8 6
+  viewpoint 4 3 12
+}
+
+material gray
+{
+   ambient 1  1 1
+   diffuse 4 4 4
+   specular 1
+}
+
+material gold
+{
+   ambient 1 1 0
+   diffuse 4 4 0
+}
+
+light mid_left
+{
+   location 2 4 0
+   emissivity 6 1 2
+}
+
+light mid_right
+{
+   location 6 4 0
+   emissivity 2 1 6
+}
+
+light mid_center
+{
+   location 6 4 0
+   emissivity 1 6 2
+}
+
+revsurf willwork
+{
+   material gray
+   surfer 2
+   base 6 0 -4
+   direction 0 1 0
+   height 6.28
+}
+
+revsurf vase
+{
+   material gold
+   surfer 3
+   base 2 0 -4
+   direction 0 1 0
+   height 6.28
+}
+
+plane floor
+{
+   material gray
+   point 0 0.01 0
+   normal 0 1 0
+}
+

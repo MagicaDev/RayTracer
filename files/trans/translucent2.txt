@@ -1,0 +1,42 @@
+
+camera cam1
+{
+  pixeldim  640 480
+  worlddim  8 6
+  viewpoint 4 3 8
+}
+
+material white
+{
+   diffuse 8  8 8
+   ambient 1  1 1
+}
+
+material green
+{
+   diffuse 0 8 2
+   transparency 0.1
+}
+
+plane backwall
+{
+   material white
+   normal 0 0 1
+   point  0 0 -8
+}
+
+sphere ball
+{
+   material green
+   center 4 1 -4
+   radius 1
+}
+
+light left
+{
+   location 0 3  3
+   emissivity 10 10 10
+}
+
+
+

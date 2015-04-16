@@ -1,0 +1,44 @@
+camera       cam1
+pixel_dim      640   480 
+world_dim      8.0   6.0 
+view_point     4.0   3.0   8.0
+
+
+
+material     white 
+ambient        1.0   1.0   1.0 
+diffuse        4.0   4.0   4.0 
+specular       0.0 
+
+shininess      0.0 
+
+transparency   0.0 
+
+
+material     brown 
+ambient        1.0   1.0   1.0 
+diffuse        3.0   3.0   0.0 
+specular       0.0 
+
+shininess      0.0 
+
+transparency   0.0 
+
+texplane     backwall 
+material     white 
+normal         0.0   0.0   1.0 
+point          0.0   0.0  -4.0 
+dimensions     8.0   6.0
+xdir           1.0   0.0   0.0
+projected      1.0   0.0   0.0
+rotation matrix
+               1.000   0.000   0.000
+               0.000   1.000   0.000
+               0.000   0.000   1.000
+texname      mike            
+mode             0
+
+light        center 
+location       4.0   3.0   0.0 
+emissivity    10.0  10.0  10.0 
+

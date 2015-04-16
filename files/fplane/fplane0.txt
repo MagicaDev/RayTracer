@@ -1,0 +1,21 @@
+camera cam1
+{
+  pixeldim  640 480
+  worlddim  8 6
+  viewpoint 4 3 3
+}
+
+material white
+{
+   diffuse 5 5 5
+   ambient 2 2 2
+}
+
+fplane floor
+{
+  material white
+  normal 0 1 0
+  point 0 0 0
+  xdir 1 0 0
+  dimensions 8 6
+}

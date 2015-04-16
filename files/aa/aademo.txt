@@ -1,0 +1,31 @@
+camera cam1
+{
+  pixeldim  800 600
+  worlddim  8 6
+  viewpoint 4 4 4
+}
+
+material white
+{
+   diffuse 5 5 5
+   ambient 2 2 2
+}
+
+
+fplane center
+{
+   material white
+   normal 0 0 1
+   point  1 -2 -3
+   xdir   1 0.4 0
+   dimensions 8 6
+}
+
+light center_red
+{
+   location 4 3 0
+   emissivity 3 3 3
+}
+
+
+

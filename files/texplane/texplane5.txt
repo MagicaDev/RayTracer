@@ -1,0 +1,155 @@
+camera cam1
+{
+  pixeldim  800 600
+  worlddim  12 9
+  viewpoint 6 4.5 10
+}
+
+material oak_tex
+{
+   ambient  1.0 1.0 1.0
+   diffuse  5.0 5.0 5.0
+   specular 0.3
+}
+
+material brick_tex
+{
+   ambient  6.0 6.0 6.0
+   diffuse  4.0 4.0 4.0
+   specular 0.0
+}
+
+material mike_tex
+{
+   ambient  4.0 4.0 4.0
+   diffuse  4.0 4.0 4.0
+   specular 0.0
+}
+
+material gold
+{
+   ambient 1 1 0
+   diffuse 4 4 0
+   transparency 0.2
+   specular 0.4
+}
+
+material gray-green
+{
+   ambient 1 1 1
+   diffuse 4 6 4
+   specular 0.4
+}
+
+
+light center
+{
+   location   6   6   3
+   emissivity 12 12  12
+}
+
+texture oak
+{
+   filename    ../../images/oak.ppm
+}
+
+texture brick
+{
+   filename    ../../images/brick8.ppm
+}
+
+texture mike
+{
+   filename    ../../images/mike.ppm
+}
+
+texplane oak_floor
+{
+   material oak_tex
+   normal     0   1 0
+   point     -6   0 0
+   xdir       1   0 0
+   dimensions 24  10
+   texname    oak
+   mode       1
+}
+
+texplane brick_wall
+{
+  material brick_tex
+  normal     0 0 1
+  point      -8 -2 -8.00
+  xdir        1 0 0
+  dimensions 30 24
+  texname    brick
+  mode       1
+}
+
+texplane oak_frame
+{
+  material  mike_tex
+  normal 0 0 1
+  point  2.6 4.6 -7.95
+  dimensions 6.8 8.8
+  xdir 1  0.0 0
+  texname oak
+  mode 1
+}
+
+material see_thru
+{
+   diffuse 4 4 4
+   transparency 0.6
+}
+sphere left
+{
+   material see_thru
+   center 5 3.5 -3
+   radius 2
+}
+
+sphere rgith
+{
+   material see_thru
+   center 7 3.5 -3
+   radius 2
+}
+
+
+texplane mike_pic
+{
+  material  mike_tex
+  normal 0 0 1
+  point  3.0 5.0 -7.90
+  dimensions 6.0 8.0
+  xdir 1  0.0 0
+  texname mike
+  mode 0
+}
+
+revsurf willwork
+{
+   material gray-green
+   surfer 2
+   base  6 0 -5
+   direction 0 1 0
+   height 4.28
+}
+
+revsurf vase
+{
+   material gold
+   surfer 3
+   base -2 0 -5
+   direction 0 1 0
+   height 6.28
+}
+revsurf vase2
+{
+   material gold
+   surfer 3
+   base 14 0 -5
+   direction 0 1 0
+   height 6.28
+}
+

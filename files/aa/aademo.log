@@ -1,0 +1,32 @@
+camera       cam1
+pixel_dim      800   600 
+world_dim      8.0   6.0 
+view_point     4.0   4.0   4.0
+
+
+
+material     white 
+ambient        2.0   2.0   2.0 
+diffuse        5.0   5.0   5.0 
+specular       0.0 
+
+shininess      0.0 
+
+transparency   0.0 
+
+fplane       center 
+material     white 
+normal         0.0   0.0   1.0 
+point          1.0  -2.0  -3.0 
+dimensions     8.0   6.0
+xdir           1.0   0.4   0.0
+projected      0.9   0.4   0.0
+rotation matrix
+               0.928   0.371   0.000
+              -0.371   0.928   0.000
+               0.000   0.000   1.000
+
+light        center_red 
+location       4.0   3.0   0.0 
+emissivity     3.0   3.0   3.0 
+

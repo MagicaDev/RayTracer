@@ -1,0 +1,6 @@
+                                         R1    R2   R3   R4
+
+Left  light passes through plane         n     n     y    y
+Right light passes through plane         y     y     y    y
+Ray to backwall passes through plane     n     y     y    n
+

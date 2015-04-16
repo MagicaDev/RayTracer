@@ -1,0 +1,29 @@
+camera       cam1
+pixel_dim      800   600 
+world_dim      8.0   6.0 
+view_point     4.0   3.0   4.0
+
+
+
+material     blue 
+ambient        0.0   0.0   0.0 
+diffuse        0.0   0.0   8.0 
+specular       1.0 
+
+shininess     50.0 
+
+transparency   0.0 
+
+sphere       shadowmaker 
+material     blue 
+center         4.0   3.0  -6.0 
+radius         4.0
+
+light        pinkfront 
+location      10.0   8.0   4.0 
+emissivity     6.0   5.0   5.0 
+
+light        cyanfront 
+location      -2.0   0.0   4.0 
+emissivity     4.0   6.0   5.0 
+

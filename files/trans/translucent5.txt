@@ -1,0 +1,60 @@
+
+camera cam1
+{
+  pixeldim  640 480
+  worlddim  8 6
+  viewpoint 4 3 8
+}
+
+material white
+{
+   diffuse 16 16 16
+   ambient 0   0  0
+}
+
+material green
+{
+   diffuse 0 8 0
+   transparency 0.6
+}
+
+material red
+{
+   diffuse 8 0 0
+   transparency 0.6
+}
+
+plane backwall
+{
+   material white
+   normal 0 0 1
+   point  0 0 -8
+}
+
+fplane  middle
+{
+   material green
+   normal 0 0 1
+   point  3 1.5 -5.05
+   xdir   1 0 0
+   dimensions   4 3
+}
+
+fplane  middle2
+{
+   material red
+   normal 0 0 1
+   point  1 1.5 -5
+   xdir   1 0 0
+   dimensions   4 3
+}
+
+
+
+light middle
+{
+   location 4 3  3
+   emissivity 10 10 10
+}
+
+

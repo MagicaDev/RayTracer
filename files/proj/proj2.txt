@@ -1,0 +1,40 @@
+camera cam1
+{
+  pixeldim  640 480
+  worlddim  8 6
+  viewpoint 4 3 4
+}
+
+material white
+{
+   ambient 0 0 0
+   diffuse 8 8 8
+}
+
+sphere center
+{
+   material white
+   center 4 3 -6
+   radius 4
+}
+
+texture mike
+{
+   filename ../../images/mike.ppm
+}
+
+projector front
+{
+   emissivity 3 3 3
+   location   4 3 2
+
+   point      2 1.5 0
+   normal     0 0 1
+
+   xdir       1 0 0
+   dimensions 4 3
+
+   texname    mike
+   mode 0
+}
+

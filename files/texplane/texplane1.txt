@@ -1,0 +1,40 @@
+camera cam1
+{
+  pixeldim  640 480
+  worlddim  8 6
+  viewpoint 4 3 8
+}
+
+material white
+{
+   diffuse 4  4 4
+   ambient 1  1 1
+}
+
+material brown
+{
+   diffuse 3  3 0
+   ambient 1  1 1
+}
+
+light center
+{
+   location 4 3  0
+   emissivity 10 10 10
+}
+
+texture mike
+{
+   filename ../images/mike.ppm
+}
+
+texplane backwall
+{
+   material white
+   normal   0 0 1
+   point    0 0 -4
+   xdir     1 0 0
+   dimensions 8 6
+   texname  mike
+   mode   0
+}
