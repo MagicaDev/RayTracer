@@ -110,15 +110,19 @@ void light_t::add_glint(object_t *hitobj, vec_t *base,
    vec_unit(&lastnorm, &lastnorm);
    hitobj->getlast_hitpt(&lasthit);
    vec_unit(dir, &udir);
-   vec_diff(base, &lasthit, &tobase);
+   vec_diff(&lasthit, base, &tobase);
    vec_unit(&tobase, &tobase);
+
    vec_sum(&tobase, &udir, &sum);
    vec_unit(&sum, &sum);
+
    dotp = vec_dot(&sum, &lastnorm);
    dotp = pow(dotp, shine);
+   printf("after %lf\n", dotp);
    hitobj->getspecular(&specular);
    pix_scale((dotp*specular),&emissivity, &emiss);
    pix_sum(pixel, &emiss, pixel);
+   
 }
 
 void light_list_print(model_t *model, FILE *out)
