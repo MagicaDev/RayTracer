@@ -8,6 +8,8 @@
 /*  This file contains function definitions for    */
 /*  for 3D vector operations                       */
 
+/* Updated for MP3 on April 16th, 2015 by Stuart Jackson, sljacks */
+
 /**  vector.c   **/
 
 #include "vector.h"
@@ -181,3 +183,5 @@ void mtx_transpose(
    vec_copy(&(m3.row[1]),&(m2->row[1]));
    vec_copy(&(m3.row[2]),&(m2->row[2]));
 }
+
+

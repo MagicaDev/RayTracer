@@ -258,6 +258,7 @@ class fplane_t: public plane_t
 
 	private:
    	mtx_t       rot;   /* rotation matrix        */
+	vec_t	    projxdir;	/* projected unitized xdir */
    	vec_t       xdir;
 
 };
@@ -354,7 +355,7 @@ class spotlight_t: public light_t
    	virtual void    printer(FILE *);
 
 	private:
-   	double  halftheta;  // half angle in degrees
+   	double  theta;  // half angle in degrees
    	vec_t   point;      // point the centerline hits
    	vec_t   direction;  // centerline direction
    	double  costheta;   // cosine of the cone's half angle

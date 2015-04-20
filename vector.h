@@ -38,3 +38,8 @@ void   vec_unit(vec_t *, vec_t *);
 void   vec_copy(vec_t *, vec_t *);
 int    vec_read(FILE *, vec_t *v1);
 void   vec_print(FILE *, char *, vec_t *);
+void   vec_cross(vec_t *, vec_t *, vec_t *);
+void   vec_project(vec_t *, vec_t *, vec_t *);
+void   vec_reflect(vec_t *, vec_t *, vec_t *);
+void   vec_xform(mtx_t *, vec_t *, vec_t *);
+void   mtx_transpose(mtx_t *, mtx_t *);
