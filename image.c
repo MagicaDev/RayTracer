@@ -53,33 +53,8 @@ void ray_trace (
    
       add_illumination(model, base, closest, &thispix);
    }
-
-// See if object has specular reflectivity
-   if(closest != NULL)
-   {
-      closest->getspecular(&specref);
-   }
-// The actual appearance of the reflection is determined here
-   if(specref != 0)
-   {
-      drgb_t specint = {0.0, 0.0, 0.0};
-      vec_t ref_dir;
-      vec_t norm;
-      vec_t last_ht;
- //     vec_t last_ht; // holds the last hit point
-
-      closest->getlast_normal(&norm);
-      vec_reflect(&norm, dir, &ref_dir);
-
-      closest->getlast_hitpt(&last_ht);
-//      closest->getlast_hitpt(&last_ht);
-
-      ray_trace(model, &last_ht, &ref_dir, &specint, total_dist, closest);
-
-      pix_scale(specref, &specint, &specint);
-
-      pix_sum(&specint, &thispix, &thispix);
-   }
+   else
+      return;
 
    /**  check to see if object was hit.  if so
    1)  add this distance to the total distance travelled so far
@@ -93,8 +68,32 @@ void ray_trace (
       //THIS IS NOW CORRECT, NEVER CHANGE IT
       total_dist += mindist;
       pix_scale(1.0/total_dist, &thispix,&thispix);
+   } 
+
+// See if object has specular reflectivity   
+      closest->getspecular(&specref);
+   
+// The actual appearance of the reflection is determined here
+   if(specref != 0)
+   {
+      drgb_t specint = {0.0, 0.0, 0.0};
+      vec_t ref_dir;
+      vec_t norm;
+      vec_t last_ht;
+
+      closest->getlast_normal(&norm);
+      vec_reflect(&norm, dir, &ref_dir);
+
+      closest->getlast_hitpt(&last_ht);
+
+      ray_trace(model, &last_ht, &ref_dir, &specint, total_dist, closest);
+
+      pix_scale(specref, &specint, &specint);
+
+      pix_sum(&specint, &thispix, &thispix);
+   }
       pix_sum(&thispix, pix, pix);
-   }  
+ 
 }
 
 
