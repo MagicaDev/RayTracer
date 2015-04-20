@@ -48,13 +48,31 @@ void camera_t::getdir(int x, int y, vec_t *dir)
 {
    vec_t tmp;
 
-   tmp.x = world_dim[X] * x / (pixel_dim[X]-1);
-   tmp.y = world_dim[Y] * y / (pixel_dim[Y]-1);
+   double dx = x;
+   double dy = y;
+   
+   if(AA_SAMPLES > 1)
+   {
+      dx = randomize(dx);
+      dy = randomize(dy);
+   }
+   
+   tmp.x = world_dim[X] * dx / (pixel_dim[X]-1);
+   tmp.y = world_dim[Y] * dy / (pixel_dim[Y]-1);
    tmp.z = 0.0;
 
    vec_copy(&tmp,dir);
    vec_diff(&view_point, dir, dir);
    vec_unit(dir, dir);
+}
+
+double camera_t::randomize(double num)
+{
+   double rannum;
+   rannum = (double)(random());
+   rannum = rannum / 0x7fffffff;
+   rannum -= 0.5;
+   return(rannum + num);
 }
 
 void camera_t::store_pixel(int x, int y, drgb_t *pix)

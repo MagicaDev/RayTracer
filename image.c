@@ -108,14 +108,22 @@ void make_pixel(model_t  *model, int  x, int  y)
    vec_t vp;
    drgb_t pix = {0.0, 0.0, 0.0};
    camera_t *cam = model->cam;
+   int i;
 
-   cam->getdir(x, y, &raydir);
+   //cam->getdir(x, y, &raydir);
    cam->getviewpt(&vp);
-	
+
+   for(i = 0; i < AA_SAMPLES; i++)
+   {
+      cam->getdir(x,y, &raydir);
+      ray_trace(model, &vp, &raydir, &pix, 0.0, NULL);
+   }	
    /*  The ray_trace function determines the pixel color in */
    /*  d_rgb units.   The last two parameters are used ONLY */
    /*  in the case of specular (bouncing) rays              */
-   ray_trace(model, &vp, &raydir, &pix, 0.0, NULL);
+   //ray_trace(model, &vp, &raydir, &pix, 0.0, NULL);
+   
+   pix_scale((1.0 / AA_SAMPLES), &pix, &pix);
    cam->store_pixel(x, y, &pix);
    return;
 }

@@ -55,11 +55,11 @@ int spotlight_t::vischeck(vec_t *hitloc)	//*hitloc = last hit location
 {
 	vec_t ulocation;	// the location vector as a unit vector
 	double ddir;		// holds the dot product
-printf("test\n");
+
 //	a unit vector from the location of the spotlight to the hit location
 	vec_diff(&location, hitloc, &ulocation);
 	vec_unit(&ulocation, &ulocation);
-printf("unit location %lf %lf %lf", ulocation.x, ulocation.y, ulocation.z);
+
 	ddir = vec_dot(&ulocation, &direction);
 
 //	If the dot product of the direction vector is greater than costheta,

@@ -24,7 +24,7 @@ plane_t::plane_t(FILE *in, model_t *model, int attrmax):object_t(in, model)
    pln_parse[1].loc = &normal;
    mask = parser(in, pln_parse, NUM_ATTRS, attrmax);
    assert(mask == 3);
-printf("\nnormal %lf %lf %lf", normal.x, normal.y, normal.z);
+
    vec_unit(&normal, &normal);
    vec_copy(&normal, &last_normal);
 
