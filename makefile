@@ -1,6 +1,6 @@
 RAYOBJS = main.o camera.o list.o  model.o material.o object.o plane.o \
           parser.o  vector.o pixel.o tplane.o image.o\
-          sphere.o light.o fplane.o
+          sphere.o light.o spotlight.o #fplane.o
 #         pplane.o tplane.o light.o sphere.o
 #         revsurf.o texplane.o texture.o \
 #         spotlight.o tplane.o ellipse.o  cylinder.o \

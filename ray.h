@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+#include <cmath>
 #include <string.h>
 #include <memory.h>
 #include <assert.h>
@@ -17,7 +17,7 @@
 #define CAM_COOKIE 49495923
 
 #define MAX_DIST   32
-#define AA_SAMPLES  1
+#define AA_SAMPLES  3
 
 #include "vector.h"
 #include "list.h"
@@ -29,7 +29,8 @@ class camera_t
    	camera_t();
    	camera_t(FILE *in);
    	void getdir(int x, int y, vec_t *dir);
-   	void store_pixel(int x,int y, drgb_t *pix);
+   	double randomize(double num);
+	void store_pixel(int x,int y, drgb_t *pix);
    	int  getxdim(void);
    	int  getydim(void);
    	void getviewpt(vec_t *view);
