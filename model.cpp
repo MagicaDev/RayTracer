@@ -44,7 +44,7 @@ void model_t::model_load_entity(FILE  *in, char  *entity) {
    //   new pplane_t(in, this, 0);
 
 	
-   else if (strcmp(entity, "finite plane") == 0)
+   else if (strcmp(entity, "fplane") == 0)
       new fplane_t(in, this, 0);
 	
 
