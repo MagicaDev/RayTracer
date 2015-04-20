@@ -15,7 +15,7 @@ fplane_t::fplane_t(FILE *in, model_t *model, int attrmax) : plane_t(in,model,2)
 	int mask;
 	vec_t holder;
 
-	strcpy(obj_type, "finite plane");
+	strcpy(obj_type, "fplane");
 
 	fpln_parse[0].loc = &xdir;
 	fpln_parse[1].loc = &dims;
@@ -25,7 +25,8 @@ fplane_t::fplane_t(FILE *in, model_t *model, int attrmax) : plane_t(in,model,2)
 //	Project xdir onto a plane, creating projxdir
 	vec_reflect(&normal, &xdir, &holder);
 	vec_copy(&holder, &projxdir);
-	assert((abs(projxdir.x) + abs(projxdir.y) + abs(projxdir.z)) != 0.0);
+	if((abs(projxdir.x) + abs(projxdir.y) + abs(projxdir.z)) != 0.0)
+		return;
 
 //	Makes projxdir unit lengthi
 	vec_unit(&projxdir, &holder);

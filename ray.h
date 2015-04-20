@@ -167,7 +167,7 @@ class light_t
 	
    	virtual void  getemiss(drgb_t *);
    	virtual void  getloc(vec_t *);
-//   	virtual int   vischeck(vec_t *);
+   	virtual int   vischeck(vec_t *);
    	virtual void  illuminate(model_t *, vec_t *, object_t *, drgb_t *);
    	virtual void  add_glint(object_t *, vec_t *, vec_t *, drgb_t *);
    	virtual void  printer(FILE *);
@@ -176,6 +176,7 @@ class light_t
    	vec_t   location;
    	drgb_t  emissivity;
    	char    name[NAME_LEN];
+	int	isspotlight;
 
 	private:
    	int   cookie;

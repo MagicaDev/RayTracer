@@ -19,6 +19,7 @@ spotlight_t::spotlight_t
 {
 	int mask;
 	double radtheta;	// Used to store theta in radians
+	isspotlight = 1;
 
 	spt_parse[0].loc = &point;
 	spt_parse[1].loc = &theta;

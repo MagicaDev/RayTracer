@@ -13,6 +13,7 @@ light_t::light_t(FILE *in, model_t *model, int attrmax)
 {
    char hold[NAME_LEN];
    int count;
+   isspotlight = 0;
 
    count = fscanf(in, "%s", name);
    assert(count == 1);
@@ -63,6 +64,9 @@ void light_t::illuminate(model_t *model, vec_t *base, object_t *hitobj,
    cos = vec_dot(&dir, &lastnorm);
    if(cos <= 0.0)
       return;
+
+   if (vischeck(&lasthit) == 0 and isspotlight == 1)
+      return;
    
    obj = (object_t *)find_closest_object(model, &lasthit, &dir, hitobj
          , &close);
@@ -111,4 +115,9 @@ void light_list_print(model_t *model, FILE *out)
       fprintf(out, "\n");
       list->next_link();
    } 
+}
+
+int light_t::vischeck(vec_t *hitloc)
+{
+	return 0;
 }
